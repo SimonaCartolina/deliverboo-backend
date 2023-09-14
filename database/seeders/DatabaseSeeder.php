@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             RestaurantSeeder::class,
+            PlateSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 
