@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text("image");
             $table->string("address");
             $table->time("opening_time");
-            $table->smallInteger("P_IVA");
+            $table->integer("P_IVA");
             $table->timestamps();
         });
     }
