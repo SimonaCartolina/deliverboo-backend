@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('restaurants', function (Blueprint $table) {
-            $table->integer('category')->nullable();
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_restaurant');
+            $table->foreign('id_restaurant')
+                ->references('id')
+                ->on('restaurants');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('restaurants', function (Blueprint $table) {
-            $table->dropColumn('category');
-        });
+        Schema::dropIfExists('orders');
     }
 };
