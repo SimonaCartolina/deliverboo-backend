@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Plate as ModelsPlate;
+use App\Models\Plate;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,9 +10,9 @@ class Restaurant extends Model
 {
     use HasFactory;
     protected $table = 'restaurants';
-    protected $fillable = ['name', 'image', 'address', 'opening_time', 'P_IVA'];
+    protected $fillable = ['name', 'image', 'address', 'opening_time', 'P_IVA',];
 
-    public function plate(){
+    public function Plate(){
         return $this->hasMany(Plate::class);
     }
 }

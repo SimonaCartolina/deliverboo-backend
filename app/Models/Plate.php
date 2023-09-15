@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Restaurant;
 
 class Plate extends Model
 {
@@ -19,7 +20,7 @@ class Plate extends Model
         return 'slug';
     }
 
-    public function restaurant(){
+    public function Restaurant(){
         return $this->belongsTo(Restaurant::class);
     }
 }
