@@ -6,6 +6,7 @@ use App\Models\Plate;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
+use App\Models\Owner;
 
 class Restaurant extends Model
 {
@@ -21,5 +22,9 @@ class Restaurant extends Model
     public function categories()
     {
         return $this->belongsToMany('App\Models\Category');
+    }
+    public function owner()
+    {
+        return $this->hasOne(Owner::class);
     }
 }
