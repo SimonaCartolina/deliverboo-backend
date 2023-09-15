@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('image');
             $table->text('description');
-            $table->float('price', 2,2);
+            $table->float('price', 4,2);
             $table->string('slug')->default('');
             $table->boolean('visible');
             $table->unsignedBigInteger('id_restaurant');
