@@ -13,7 +13,7 @@ class Restaurant extends Model
 {
     use HasFactory;
     protected $table = 'restaurants';
-    protected $fillable = ['name', 'image', 'address', 'opening_time', 'P_IVA',];
+    protected $fillable = ['name', 'image', 'address', 'opening_time', 'P_IVA', 'category'];
 
     public function Plate()
     {
@@ -24,7 +24,7 @@ class Restaurant extends Model
     {
         return $this->belongsToMany('App\Models\Category');
     }
-    
+
     public function owner()
     {
         return $this->hasOne(Owner::class);
