@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Restaurant;
+use App\Models\Order;
 
 class Plate extends Model
 {
@@ -20,7 +21,13 @@ class Plate extends Model
         return 'slug';
     }
 
-    public function Restaurant(){
+    public function Restaurant()
+    {
         return $this->belongsTo(Restaurant::class);
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany('App\Models\Order')->withPivot('quantity', 'created_at', 'updated at')->withTimestamps();
     }
 }

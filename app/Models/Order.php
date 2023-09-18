@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Restaurant;
 use App\Models\Guest;
 use App\Models\Payment;
+use App\Models\Plate;
 
 class Order extends Model
 {
@@ -27,5 +28,10 @@ class Order extends Model
     public function payment()
     {
         return $this->hasOne(Payment::class);
+    }
+
+    public function plates()
+    {
+        return $this->belongsToMany('App\Models\Plate');
     }
 }
