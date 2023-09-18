@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Restaurant;
 use App\Models\Guest;
+use App\Models\Payment;
 
 class Order extends Model
 {
@@ -21,5 +22,10 @@ class Order extends Model
     public function guest()
     {
         return $this->hasOne(Guest::class);
+    }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
     }
 }
