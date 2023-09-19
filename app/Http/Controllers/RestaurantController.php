@@ -71,7 +71,9 @@ class RestaurantController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $restaurantsList = Restaurant::all();
+        $restaurant = Restaurant::findOrFail($id);
+        return view('admin.edit', compact('restaurant', 'restaurantsList'));
     }
 
     /**
@@ -79,7 +81,14 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $data = $request->all();
+        $img_path = Storage::put('uploads/', $request['image']);
+        $data['image'] = $img_path;
+
+        $restaurant = Restaurant::findOrFail($id);
+        $restaurant->update($data);
+        return redirect()->route('admin.index', $restaurant->id)->with('update', $restaurant->id);
     }
 
     /**

@@ -37,6 +37,10 @@
             <button class="button-container">
                 <a href="{{ route('guest.menu')}}">Vedi menu</a>
             </button>
+
+            <a class="btn btn-sm btn-success me-2 my-4" href="{{ route('admin.edit', $restaurant->id) }}">
+                <i class="fa-solid fa-pen"></i>
+            </a>
         </div>
         @endforeach
     </div>
