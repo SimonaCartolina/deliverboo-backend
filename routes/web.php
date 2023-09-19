@@ -30,4 +30,11 @@ Route::get('/', function () {
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/index', [RestaurantController::class, 'index'])->name('index');
+
+    Route::get('/create', [RestaurantController::class, 'create'])->name('create');
+
+    Route::post('/store', [RestaurantController::class, 'store'])->name('store');
 });
+
+Route::get('guest/menu', [RestaurantController::class, 'show'])->name('guest.menu');

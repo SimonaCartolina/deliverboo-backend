@@ -30,7 +30,7 @@ class RestaurantController extends Controller
     {
         $restaurantsList = Restaurant::all();
         $platesList = Plate::all();
-        return view('guest.index', compact('restaurantsList', 'platesList'));
+        return view('admin.index', compact('restaurantsList', 'platesList'));
     }
 
     /**
@@ -38,7 +38,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        $restaurantsList = Restaurant::all();
+        return view('admin.create', compact('restaurantsList'));
     }
 
     /**
@@ -46,7 +47,13 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $img_path = Storage::put('uploads/', $request['image']);
+        $data['image'] = $img_path;
+        $newRestaurant = new Restaurant();
+        $newRestaurant->fill($data);
+        $newRestaurant->save();
+        return redirect()->route('admin.index')->with('created', $newRestaurant->id);
     }
 
     /**

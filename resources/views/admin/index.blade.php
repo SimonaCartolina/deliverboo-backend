@@ -35,7 +35,7 @@
             </ul>
 
             <button class="button-container">
-                <a href="{{ route('guest.menu', ['restaurant' => $restaurant->id]) }}">Vedi menu</a>
+                <a href="{{ route('guest.menu')}}">Vedi menu</a>
             </button>
         </div>
         @endforeach
