@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->text('image');
             $table->text('description');
-            $table->float('price', 4,2);
+            $table->float('price', 4, 2);
             $table->string('slug')->default('');
             $table->boolean('visible');
-            $table->unsignedBigInteger('id_restaurant');
+            $table->unsignedBigInteger('id_restaurant')->nullable();
             $table->foreign('id_restaurant')
                 ->references('id')
                 ->on('restaurants');
@@ -32,7 +32,10 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void
-    {   
+    {
+        Schema::table('plates', function (Blueprint $table) {
+            $table->dropForeign(['id_restaurant']);
+        });
         Schema::dropIfExists('plates');
     }
 };

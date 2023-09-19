@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
 
-            $table->unsignedBigInteger('id_restaurant');
+            $table->unsignedBigInteger('id_restaurant')->nullable();
             $table->foreign('id_restaurant')
                 ->references('id')
                 ->on('restaurants');
@@ -32,6 +32,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+
         Schema::dropIfExists('owners');
     }
 };
