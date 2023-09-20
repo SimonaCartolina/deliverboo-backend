@@ -2,6 +2,8 @@
 @section('title', 'index')
 @section('custom-stylesheets')
 
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
@@ -15,6 +17,17 @@
             </h1>
         </div>
     </div>
+
+    <li>
+
+        <div class="col-lg-6 col-md-3 col-sm-11 order-lg-1 order-md-1 order-sm-2 my-sm-2">
+            <div class="input-group">
+                <input type="search" class="form-control px-2 py-2" id="searchBar" placeholder="Ristoranti,spesa,piatti" style="width: 620px; background-color: #f5f5f5; color: #cccdcd" />
+            </div>
+        </div>
+
+
+    </li>
 
     <div class="row d-flex flex-row m-auto justify-content-center">
         @foreach ($restaurantsList as $restaurant)

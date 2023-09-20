@@ -2,6 +2,8 @@
 
 @section('content')
 
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 <div class="navbar-jumbo px-5">
     <div class="row">
 

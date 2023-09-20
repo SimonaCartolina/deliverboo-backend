@@ -53,6 +53,8 @@
                         @endif
                         @else
 
+
+
                         <li>
 
                             <a href="{{route('admin.home')}}" class="nav-link" role="button"> Home </a>
@@ -83,8 +85,12 @@
                                 </form>
                             </div>
                         </li>
+
+
                         @endguest
                     </ul>
+
+
                 </div>
             </div>
         </nav>

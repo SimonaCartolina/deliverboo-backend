@@ -45,5 +45,6 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 Route::get('guest/create', [PlatesController::class, 'create'])->name('guest.create')->middleware('auth');
 Route::post('guest/store', [PlatesController::class, 'store'])->name('guest.store')->middleware('auth');
 Route::get('guest/menu', [RestaurantController::class, 'show'])->name('guest.menu')->middleware('auth');
+
 Route::put('guest/{slug}', [PlatesController::class, 'update'])->name('guest.update')->middleware('auth');
 Route::get('guest/{slug}/edit', [PlatesController::class, 'edit'])->name('guest.edit')->middleware('auth');
