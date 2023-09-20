@@ -5,14 +5,29 @@
 @endsection
 
 @section('content')
-<h1>Menù:</h1>
+
+
 <div class="container d-flex flex-wrap">
+    <div class="col-12 ps-4">
+        <div>
+        <h1>Menù:</h1>
+        <button class="button-container mt-2 p-2">
+                <a href="{{ route('guest.create')}}">Create new plate</a>
+        </button>
+        </div>
+    </div>
+
+            
 
 
     @foreach ($platesList as $plate)
     <div class="card my-4 mx-4" style="width:22rem;">
         <ul>
-            <img src="{{$plate->image}}" alt="">
+                @if (str_starts_with($plate->image, 'http'))
+                    <img src="{{ $plate->image }}" alt="{{ $plate->name }}">
+                @else
+                    <img src="{{ asset('storage/' . $plate->image) }}" alt="{{ $plate->name }}">
+                @endif
             <li>
                 <h2>{{ $plate->name }}</h2>
                 <p>{{ $plate->description }}</p>

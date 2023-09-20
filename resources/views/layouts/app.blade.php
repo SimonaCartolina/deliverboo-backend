@@ -53,19 +53,19 @@
                         @else
 
                         <li>
-                            <a href="" class="nav-link" role="button"> Profile </a>
+                            <a href="" class="nav-link me-3" role="button"> Profile </a>
                         </li>
 
                         <li>
-                            <a href="" class="nav-link" role="button"> Orders </a>
+                            <a href="" class="nav-link me-3" role="button"> Orders </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.index')}}">List</a>
+                            <a class="nav-link me-3" href="{{route('admin.index')}}">Restaurants List</a>
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.create')}}">Create</a>
+                            <a class="nav-link me-3" href="{{route('admin.create')}}">Create new restaurants</a>
                         </li>
 
                         <li class="nav-item dropdown">
