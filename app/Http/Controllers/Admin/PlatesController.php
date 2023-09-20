@@ -27,7 +27,7 @@ class PlatesController extends Controller
     public function create()
     {
         //
-        $platesList= Plate::all();
+        $platesList = Plate::all();
 
         return view('guest.create', compact('platesList'));
     }
@@ -40,7 +40,7 @@ class PlatesController extends Controller
         //
         $data = $request->all();
 
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $img_path = Storage::put('uploads', $request['image']);
             $data['image'] = $img_path;
         }
@@ -61,17 +61,26 @@ class PlatesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $slug)
     {
-        //
+        $menuList = Plate::all();
+        $plate = Plate::findOrFail($slug);
+        return view('admin.edit', compact('plate', 'menuList'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $slug)
     {
-        //
+
+        $data = $request->all();
+        $img_path = Storage::put('uploads/', $request['image']);
+        $data['image'] = $img_path;
+
+        $plate = Plate::findOrFail($slug);
+        $plate->update($data);
+        return redirect()->route('guest.menu', $plate->slug)->with('update', $plate->slug);
     }
 
     /**
