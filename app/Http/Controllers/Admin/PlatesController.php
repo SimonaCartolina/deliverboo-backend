@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Models\Plate;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+namespace App\Http\Controllers\admin;
 
-class PlateController extends Controller
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Plate;
+
+
+class PlatesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +16,9 @@ class PlateController extends Controller
     public function index()
     {
         //
+        $platesList = Plate::all();
+
+        return view('guest.menu', compact('platesList'));
     }
 
     /**
@@ -23,6 +27,9 @@ class PlateController extends Controller
     public function create()
     {
         //
+        $platesList= Plate::all();
+
+        return view('guest.create', compact('platesList'));
     }
 
     /**
@@ -31,6 +38,16 @@ class PlateController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+
+        if ($request->hasFile('image')){
+            $img_path = Storage::put('uploads', $request['image']);
+            $data['image'] = $img_path;
+        }
+        $newPlate = new Plate();
+        $newPlate->fill($data);
+        $newPlate->save();
+        return redirect()->route('guest.menu')->with('created', $newPlate->id);
     }
 
     /**

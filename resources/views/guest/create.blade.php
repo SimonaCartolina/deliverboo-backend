@@ -9,20 +9,11 @@
     <div class="row justify-content-around">
         <div class="col-8 my-5">
             <h1 class="fw-bolder" style="color:black">
-                Make your restaurant!
+                Make your plate!
             </h1>
         </div>
-        <form class="col-8 bg-light p-3 rounded bg-white " action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+        <form class="col-8 bg-light p-3 rounded bg-white " action="{{ route('guest.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-
-            <div class="mb-3">
-
-<<<<<<< HEAD
-                <label for="image" placeholder="Upload image">
-                    upload an image
-                </label>
-                <input type="file" name="image" id="image" class="image" placeholder="upload image">
-=======
 
                 @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -34,9 +25,6 @@
                     {{-- <input type="text" class="form-control" id="image" name="image"> --}}
                     <input type="file" name="image" id="image" class="form-control" placeholder="Upload your image" value="{{ old('image', '') }}">
                 </div>
->>>>>>> 8d913e9c47c5424f735c5bb4842a106739240ddc
-
-            </div>
 
             <div class="mb-3">
 
@@ -47,31 +35,24 @@
             </div>
 
             <div class="mb-3">
-                <label for="opening_time" class="form-label">
-                    Opening_time
+                <label for="description" class="form-label">
+                    Description:
                 </label>
-                <input type="text" class="form-control" id="opening_time" name="opening_time">
+                <input type="text" class="form-control" id="description" name="description">
             </div>
 
             <div class="mb-3">
-                <label for="address" class="form-label">
-                    Address:
+                <label for="price" class="form-label">
+                    Price:
                 </label>
-                <input type="text" class="form-control" id="address" name="address">
-            </div>
-
-            <div class="mb-3">
-                <label for="P_IVA" class="form-label">
-                    P_IVA:
-                </label>
-                <input type="text" class="form-control" id="P_IVA" name="P_IVA">
+                <input type="text" class="form-control" id="price" name="price">
             </div>
 
             <button type="submit" class="btn btn-success">
                 Create
             </button>
 
-            <a href="{{ route('admin.index')}}" class="btn btn-danger">
+            <a href="{{ route('guest.menu')}}" class="btn btn-danger">
                 Delete
             </a>
         </form>
