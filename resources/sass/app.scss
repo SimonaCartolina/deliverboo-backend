@@ -6,3 +6,11 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}

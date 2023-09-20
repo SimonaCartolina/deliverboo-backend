@@ -11,6 +11,12 @@ img {
     width: 12rem;
     display: block;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+img:hover {
+    transform: scale(1.1);
 }
 
 
@@ -865,4 +871,39 @@ select:focus {
             display: none;
         }
     }
+}
+
+li {
+    list-style: none;
+}
+
+td {
+    padding: 0.80rem;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 5px;
+    background-color: lightblue;
+}
+
+.custom-button {
+    color: #041116;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button-container:hover {
+    background-color: rgba(89, 189, 223, 0.875);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+a:hover {
+    color: #041116;
 }

@@ -8,10 +8,6 @@
 
         <div class="column column-30">
             <div class="user-section">
-                <label for="image" placeholder="Upload image">
-                    upload an image
-                </label>
-                <input type="file" name="image" id="image" class="image" placeholder="upload image">
                 <div class="username">
                     <h4>{{ Auth::user()->name }}</h4>
                     <p>Restaurant owner</p>
@@ -26,17 +22,20 @@
         <div class="row grid-responsive">
             <div class="column page-heading">
                 <div class="large-card">
-                    <h1>Hey there!</h1>
-                    <div class="button-container">
+                    <h1 class="mx-4">Hey there!</h1>
+                    <div class="d-flex align-items-center">
+                        <div class="button-container  mx-4 p-2">
 
-                        <a href="{{route('admin.create')}}">Create a new restaurant</a>
+                            <a href="{{route('admin.create')}}">Create a new restaurant</a>
 
 
-                    </div>
+                        </div>
 
-                    <div class="button-container">
+                        <div class="button-container  mx-4 p-2">
 
-                        <a href="{{route('admin.index')}}">Check all restaurants</a>
+                            <a href="{{route('admin.index')}}">Check all restaurants</a>
+
+                        </div>
 
                     </div>
 

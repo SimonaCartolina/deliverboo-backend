@@ -13,6 +13,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -53,32 +54,19 @@
                         @else
 
                         <li>
-<<<<<<< HEAD
+
                             <a href="{{route('admin.home')}}" class="nav-link" role="button"> Home </a>
                         </li>
 
                         <li>
                             <a href="" class="nav-link" role="button"> Profile </a>
-=======
-                            <a href="" class="nav-link me-3" role="button"> Profile </a>
->>>>>>> 8d913e9c47c5424f735c5bb4842a106739240ddc
+
                         </li>
 
                         <li>
                             <a href="" class="nav-link me-3" role="button"> Orders </a>
                         </li>
 
-<<<<<<< HEAD
-=======
-                        <li class="nav-item">
-                            <a class="nav-link me-3" href="{{route('admin.index')}}">Restaurants List</a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-3" href="{{route('admin.create')}}">Create new restaurants</a>
-                        </li>
-
->>>>>>> 8d913e9c47c5424f735c5bb4842a106739240ddc
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
