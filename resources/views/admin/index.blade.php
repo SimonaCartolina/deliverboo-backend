@@ -24,7 +24,15 @@
             <div class="card-body">
 
                 <h5 class="card-title">{{ $restaurant->name  }}</h5>
-                <img src="{{$restaurant->image}}" alt="">
+
+                @if (str_starts_with($restaurant->image, 'http' ))
+                <img src="{{ $restaurant->image }}" alt="{{ $restaurant->name }}">
+                @else
+                <img src="{{ asset('storage/' . $restaurant->image) }}" alt="{{ $restaurant->name }}">
+                @endif
+
+
+                <!-- <img src="{{$restaurant->image}}" alt=""> -->
                 <p class="card-text"> {{ $restaurant->address  }}</p>
 
             </div>

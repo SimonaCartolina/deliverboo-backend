@@ -17,6 +17,7 @@
 
             <div class="mb-3">
 
+
                 <label for="image" placeholder="Upload image">
 
                     upload an image
