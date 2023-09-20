@@ -26,7 +26,7 @@ class RestaurantController extends Controller
     //     return view('guest.menu', compact('platesList'));
     // }
 
-    public function index(Request $request)
+    public function index()
     {
         $restaurantsList = Restaurant::all();
         $platesList = Plate::all();

@@ -53,19 +53,15 @@
                         @else
 
                         <li>
+                            <a href="{{route('admin.home')}}" class="nav-link" role="button"> Home </a>
+                        </li>
+
+                        <li>
                             <a href="" class="nav-link" role="button"> Profile </a>
                         </li>
 
                         <li>
                             <a href="" class="nav-link" role="button"> Orders </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.index')}}">List</a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.create')}}">Create</a>
                         </li>
 
                         <li class="nav-item dropdown">
