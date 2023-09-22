@@ -59,11 +59,12 @@ class RestaurantController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(Restaurant $restaurant)
     {
-        $platesList = Plate::all();
-
-        return view('guest.menu', compact('platesList'));
+        // $platesList = Plate::all();
+        // return view('guest.menu', compact('platesList'));
+        
+        return view('admin.show', compact('restaurant'));
     }
 
     /**

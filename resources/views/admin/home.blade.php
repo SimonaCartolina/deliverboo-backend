@@ -35,7 +35,7 @@
 
                         <div class="button-container  mx-4 p-2">
 
-                            <a href="{{route('admin.index')}}">Check all restaurants</a>
+                            <a href="{{route('admin.show'), $restaurant->id }}">Check all restaurants</a>
 
                         </div>
 

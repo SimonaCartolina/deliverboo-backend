@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController as HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController as RestaurantController;
 use App\Http\Controllers\Admin\PlatesController as PlatesController;
+use App\Http\Controllers\UserController as UserController;
 use Illuminate\Routing\Controllers\Middleware;
 
 /*
@@ -36,6 +37,9 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/create', [RestaurantController::class, 'create'])->name('create');
 
     Route::post('/store', [RestaurantController::class, 'store'])->name('store');
+
+    Route::get('/{id}', [RestaurantController::class, 'show'])->name('show');
+
 
     //first update, then edit
     Route::put('/{id}', [RestaurantController::class, 'update'])->name('update');

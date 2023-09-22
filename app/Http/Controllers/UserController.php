@@ -37,9 +37,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Restaurant $restaurant)
     {
         //
+        return view('admin.show');
     }
 
     /**
