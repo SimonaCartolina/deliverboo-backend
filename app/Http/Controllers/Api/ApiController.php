@@ -11,9 +11,17 @@ use App\Models\Plate;
 
 class ApiController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $restaurants = Restaurant::all();
+        // $restaurants = Restaurant::all();
+        // return response()->json($restaurants);
+
+        if ($request->has('search')) {
+            $restaurants = Restaurant::where('name', 'LIKE', '%' . $request->search . '%')->get();
+        } else {
+            $restaurants = Restaurant::all();
+        }
+
         return response()->json($restaurants);
     }
 }

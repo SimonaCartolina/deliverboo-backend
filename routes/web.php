@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController as HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController as RestaurantController;
-use App\Http\Controllers\Admin\PlatesController as PlatesController;
+use App\Http\Controllers\Admin\PlateController as PlateController;
 use Illuminate\Routing\Controllers\Middleware;
 
 /*
@@ -20,8 +20,6 @@ use Illuminate\Routing\Controllers\Middleware;
 Auth::routes();
 
 
-// Route::get('guest/index', [RestaurantController::class, 'index'])->name('index');
-// Route::get('guest/index/guest/menu', [RestaurantController::class, 'show'])->name('guest.menu');
 
 
 Route::get('/', function () {
@@ -38,13 +36,13 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::post('/store', [RestaurantController::class, 'store'])->name('store');
 
     //first update, then edit
-    Route::put('/{id}', [RestaurantController::class, 'update'])->name('update');
     Route::get('/{id}/edit', [RestaurantController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [RestaurantController::class, 'update'])->name('update');
 });
 
-Route::get('guest/create', [PlatesController::class, 'create'])->name('guest.create')->middleware('auth');
-Route::post('guest/store', [PlatesController::class, 'store'])->name('guest.store')->middleware('auth');
-Route::get('guest/menu', [RestaurantController::class, 'show'])->name('guest.menu')->middleware('auth');
+Route::get('admin/menu/menu', [RestaurantController::class, 'show'])->name('admin.menu.menu')->middleware('auth');
+Route::get('admin/menu/create', [PlateController::class, 'create'])->name('admin.menu.create')->middleware('auth');
+Route::post('admin/menu/store', [PlateController::class, 'store'])->name('admin.menu.store')->middleware('auth');
 
-Route::put('guest/{slug}', [PlatesController::class, 'update'])->name('guest.update')->middleware('auth');
-Route::get('guest/{slug}/edit', [PlatesController::class, 'edit'])->name('guest.edit')->middleware('auth');
+Route::get('admin/menu/{slug}/edit', [PlateController::class, 'edit'])->name('admin.menu.edit')->middleware('auth');
+Route::put('admin/menu/{slug}', [PlateController::class, 'update'])->name('admin.menu.update')->middleware('auth');

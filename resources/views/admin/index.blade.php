@@ -18,16 +18,16 @@
         </div>
     </div>
 
-    <li>
-
-        <div class="col-lg-6 col-md-3 col-sm-11 order-lg-1 order-md-1 order-sm-2 my-sm-2">
-            <div class="input-group">
-                <input type="search" class="form-control px-2 py-2" id="searchBar" placeholder="Ristoranti,spesa,piatti" style="width: 620px; background-color: #f5f5f5; color: #cccdcd" />
+    <div class="row">
+        @if( session('created'))
+        <div class="col-4">
+            <div class="alert alert-success">
+                <i class="fa-solid fa-circle-exclamation"></i> {{ session('created') }} has been succesfully created.
             </div>
         </div>
+        @endif
+    </div>
 
-
-    </li>
 
     <div class="row d-flex flex-row m-auto justify-content-center">
         @foreach ($restaurantsList as $restaurant)
@@ -54,7 +54,7 @@
             </ul>
 
             <button class="button-container">
-                <a href="{{ route('guest.menu')}}">Vedi menu</a>
+                <a href="{{ route('admin.menu.menu')}}">Vedi menu</a>
             </button>
 
             <a class="btn btn-sm btn-success me-2 my-4" href="{{ route('admin.edit', $restaurant->id) }}">

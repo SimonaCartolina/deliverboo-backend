@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Models\Plate;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
 
 
-class PlatesController extends Controller
+
+class PlateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +21,7 @@ class PlatesController extends Controller
         //
         $platesList = Plate::all();
 
-        return view('guest.menu', compact('platesList'));
+        return view('admin.menu.menu', compact('platesList'));
     }
 
     /**
@@ -29,7 +32,7 @@ class PlatesController extends Controller
         //
         $platesList = Plate::all();
 
-        return view('guest.create', compact('platesList'));
+        return view('admin.menu.create', compact('platesList'));
     }
 
     /**
@@ -44,10 +47,11 @@ class PlatesController extends Controller
             $img_path = Storage::put('uploads', $request['image']);
             $data['image'] = $img_path;
         }
+
         $newPlate = new Plate();
         $newPlate->fill($data);
         $newPlate->save();
-        return redirect()->route('guest.menu')->with('created', $newPlate->id);
+        return redirect()->route('admin.menu.menu')->with('created', $newPlate->id);
     }
 
     /**
@@ -65,7 +69,7 @@ class PlatesController extends Controller
     {
         $menuList = Plate::all();
         $plate = Plate::findOrFail($slug);
-        return view('admin.edit', compact('plate', 'menuList'));
+        return view('admin.menu.edit', compact('plate', 'menuList'));
     }
 
     /**
@@ -74,13 +78,15 @@ class PlatesController extends Controller
     public function update(Request $request, string $slug)
     {
 
+
         $data = $request->all();
         $img_path = Storage::put('uploads/', $request['image']);
         $data['image'] = $img_path;
 
-        $plate = Plate::findOrFail($slug);
+        $plate = Plate::where('slug', $slug)->findOrFail();
         $plate->update($data);
-        return redirect()->route('guest.menu', $plate->slug)->with('update', $plate->slug);
+
+        return redirect()->route('admin.menu.menu', $plate->slug)->with('update', $plate->slug);
     }
 
     /**

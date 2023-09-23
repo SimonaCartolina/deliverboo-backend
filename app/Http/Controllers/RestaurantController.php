@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
-use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Plate;
-
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Auth;
+use App\Models\User;
 
 class RestaurantController extends Controller
 {
@@ -20,11 +22,7 @@ class RestaurantController extends Controller
      * Display a listing of the resource.
      */
 
-    // public function menu()
-    // {
-    //     $platesList = Plate::all();
-    //     return view('guest.menu', compact('platesList'));
-    // }
+
 
     public function index()
     {
@@ -48,8 +46,11 @@ class RestaurantController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $img_path = Storage::put('uploads/', $request['image']);
-        $data['image'] = $img_path;
+
+        if ($request->hasFile('image')) {
+            $img_path =  Storage::put('uploads/', $request['image']);
+            $data['image'] = $img_path;
+        }
         $newRestaurant = new Restaurant();
         $newRestaurant->fill($data);
         $newRestaurant->save();
@@ -63,7 +64,7 @@ class RestaurantController extends Controller
     {
         $platesList = Plate::all();
 
-        return view('guest.menu', compact('platesList'));
+        return view('admin.menu.menu', compact('platesList'));
     }
 
     /**
@@ -83,11 +84,15 @@ class RestaurantController extends Controller
     {
 
         $data = $request->all();
-        $img_path = Storage::put('uploads/', $request['image']);
-        $data['image'] = $img_path;
+
+        if ($request->hasFile('image')) {
+            $img_path =  Storage::put('uploads/', $request['image']);
+            $data['image'] = $img_path;
+        }
 
         $restaurant = Restaurant::findOrFail($id);
         $restaurant->update($data);
+
         return redirect()->route('admin.index', $restaurant->id)->with('update', $restaurant->id);
     }
 

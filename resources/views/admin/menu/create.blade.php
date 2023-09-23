@@ -12,19 +12,19 @@
                 Make your plate!
             </h1>
         </div>
-        <form class="col-8 bg-light p-3 rounded bg-white " action="{{ route('guest.store') }}" method="POST" enctype="multipart/form-data">
+        <form class="col-8 bg-light p-3 rounded bg-white " action="{{ route('admin.menu.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-                @error('image')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-                <div class="mb-3">
-                    <label for="image" class="form-label">
-                        Image
-                    </label>
-                    {{-- <input type="text" class="form-control" id="image" name="image"> --}}
-                    <input type="file" name="image" id="image" class="form-control" placeholder="Upload your image" value="{{ old('image', '') }}">
-                </div>
+            @error('image')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <div class="mb-3">
+                <label for="image" class="form-label">
+                    Image
+                </label>
+                {{-- <input type="text" class="form-control" id="image" name="image"> --}}
+                <input type="file" name="image" id="image" class="form-control" placeholder="Upload your image" value="{{ old('image', '') }}">
+            </div>
 
             <div class="mb-3">
 
@@ -52,7 +52,7 @@
                 Create
             </button>
 
-            <a href="{{ route('guest.menu')}}" class="btn btn-danger">
+            <a href="{{ route('admin.menu.menu')}}" class="btn btn-danger">
                 Delete
             </a>
         </form>
