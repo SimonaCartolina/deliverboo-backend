@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use App\Models\Restaurant;
-use App\Models\Owner;
 
-class OwnerController extends Controller
+
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +14,8 @@ class OwnerController extends Controller
     public function index()
     {
         //
+        // $restaurantsList = Restaurant::where('id_restaurant',Auth::user()->id);
+        // return view('admin.index', compact('restaurantsList'));
     }
 
     /**
