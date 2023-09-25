@@ -8,6 +8,7 @@ use App\Models\Plate;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 
 
@@ -41,12 +42,19 @@ class PlateController extends Controller
     public function store(Request $request)
     {
         //
-        $data = $request->all();
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:100'],
+            'image' => ['required', 'image'],
+            'description' => ['required', 'max:255'],
+            'price' => ['required'],
+
+        ]);
 
         if ($request->hasFile('image')) {
-            $img_path = Storage::put('uploads', $request['image']);
+            $img_path =  Storage::put('uploads/', $request['image']);
             $data['image'] = $img_path;
         }
+
 
         $newPlate = new Plate();
         $newPlate->fill($data);
@@ -79,14 +87,23 @@ class PlateController extends Controller
     {
 
 
-        $data = $request->all();
-        $img_path = Storage::put('uploads/', $request['image']);
-        $data['image'] = $img_path;
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:100'],
+            'image' => ['required', 'image'],
+            'description' => ['required', 'max:255'],
+            'price' => ['required'],
 
-        $plate = Plate::where('slug', $slug)->findOrFail();
+        ]);
+
+        if ($request->hasFile('image')) {
+            $img_path =  Storage::put('uploads/', $request['image']);
+            $data['image'] = $img_path;
+        }
+
+        $plate = Plate::findOrFail($slug);
         $plate->update($data);
 
-        return redirect()->route('admin.menu.menu', $plate->slug)->with('update', $plate->slug);
+        return redirect()->route('admin.menu.menu')->with('update', $plate->slug);
     }
 
     /**

@@ -45,12 +45,19 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:100'],
+            'image' => ['required', 'image'],
+            'address' => ['required', 'string', 'max:100'],
+            'opening_time' => ['required'],
+            'P_IVA' => ['required', 'min:9', 'max:9'],
+        ]);
 
         if ($request->hasFile('image')) {
             $img_path =  Storage::put('uploads/', $request['image']);
             $data['image'] = $img_path;
         }
+
         $newRestaurant = new Restaurant();
         $newRestaurant->fill($data);
         $newRestaurant->save();
@@ -83,13 +90,18 @@ class RestaurantController extends Controller
     public function update(Request $request, string $id)
     {
 
-        $data = $request->all();
+        $data = $request->validate([
+            'name' => ['string', 'max:100'],
+            'image' => ['image'],
+            'address' => ['string', 'max:100'],
+            'opening_time' => ['required'],
+            'P_IVA' => ['min:9', 'max:9'],
+        ]);
 
         if ($request->hasFile('image')) {
             $img_path =  Storage::put('uploads/', $request['image']);
             $data['image'] = $img_path;
         }
-
         $restaurant = Restaurant::findOrFail($id);
         $restaurant->update($data);
 

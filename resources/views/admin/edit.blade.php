@@ -13,7 +13,7 @@
                 Modify {{ $restaurant->id }}
             </h1>
         </div>
-        <form class="col-8 bg-light p-3 rounded bg-white" action="{{ route('admin.update', $restaurant->id) }}" method="POST">
+        <form class="col-8 bg-light p-3 rounded bg-white" action="{{ route('admin.update', $restaurant->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
