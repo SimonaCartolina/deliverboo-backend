@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             RestaurantSeeder::class,
             PlateSeeder::class,
             CategorySeeder::class,
-            OwnerSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 
