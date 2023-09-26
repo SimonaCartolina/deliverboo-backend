@@ -75,7 +75,6 @@ class PlateController extends Controller
      */
     public function edit(string $slug)
     {
-        $menuList = Plate::all();
         $plate = Plate::findOrFail($slug);
         return view('admin.menu.edit', compact('plate', 'menuList'));
     }
