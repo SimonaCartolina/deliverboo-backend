@@ -18,7 +18,6 @@ class PlateSeeder extends Seeder
     {
 
         $restaurants = Restaurant::all();
-        $id_restaurant = $restaurants->pluck('id');
 
         $plates = [
             'plates' => [
@@ -857,8 +856,6 @@ class PlateSeeder extends Seeder
             $newPlate->slug = Str::of("$newPlate->id " . $newPlate->name)->slug('-');
 
             //ID RISTORANTE//
-
-            $newPlate->id_restaurant = $newPlate['id_restaurant'];
 
             $newPlate->save();
 

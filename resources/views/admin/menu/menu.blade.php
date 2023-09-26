@@ -25,7 +25,7 @@
 
 
 
-    @if (empty($plates) > 0)
+    @if ($plates->count() > 0)
     @foreach($plates as $plate)
     <div class="card my-4 mx-4" style="width:22rem;">
         <ul>

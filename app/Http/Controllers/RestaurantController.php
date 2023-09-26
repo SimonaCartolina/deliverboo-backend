@@ -73,7 +73,7 @@ class RestaurantController extends Controller
     {
 
         $restaurant = auth()->user()->restaurant;
-        $plates = $restaurant->plates();
+        $plates = $restaurant->plates;
         return view('admin.menu.menu', compact('plates'));
         // $platesList = Plate::all();
 

@@ -14,7 +14,7 @@ class Plate extends Model
     use SoftDeletes;
 
     protected $table = 'plates';
-    protected $fillable = ['name', 'image', 'description', 'price', 'slug', 'visible'];
+    protected $fillable = ['name', 'image', 'description', 'price', 'slug', 'visible', 'restaurant_id'];
 
     public function getRouteKeyName(): string
     {

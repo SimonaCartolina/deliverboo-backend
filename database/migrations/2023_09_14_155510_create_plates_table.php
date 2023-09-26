@@ -19,8 +19,8 @@ return new class extends Migration
             $table->float('price', 4, 2);
             $table->string('slug')->default('');
             $table->boolean('visible')->default(1);
-            $table->unsignedBigInteger('id_restaurant')->nullable();
-            $table->foreign('id_restaurant')
+            $table->unsignedBigInteger('restaurant_id')->nullable();
+            $table->foreign('restaurant_id')
                 ->references('id')
                 ->on('restaurants');
             $table->softDeletes();
