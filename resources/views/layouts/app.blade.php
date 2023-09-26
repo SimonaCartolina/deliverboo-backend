@@ -61,7 +61,7 @@
                         </li>
 
                         <li>
-                            <a href="" class="nav-link" role="button"> Profile </a>
+                            <a href="{{route('admin.index')}}" class="nav-link" role="button"> Profile </a>
 
                         </li>
 
