@@ -36,8 +36,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        $restaurantsList = Restaurant::all();
-        return view('admin.create', compact('restaurantsList'));
+        return view('admin.create');
     }
 
     /**
@@ -61,7 +60,7 @@ class RestaurantController extends Controller
         $newRestaurant = new Restaurant();
         $newRestaurant->fill($data);
         $newRestaurant->save();
-        return redirect()->route('admin.index')->with('created', $newRestaurant->id);
+        return redirect()->route('admin.home')->with('created', $newRestaurant->id);
     }
 
     /**
@@ -116,3 +115,4 @@ class RestaurantController extends Controller
         //
     }
 }
+
