@@ -14,14 +14,14 @@ class Plate extends Model
     use SoftDeletes;
 
     protected $table = 'plates';
-    protected $fillable = ['name', 'image', 'description', 'price', 'slug', 'visible', 'id_restaurant',];
+    protected $fillable = ['name', 'image', 'description', 'price', 'slug', 'visible'];
 
     public function getRouteKeyName(): string
     {
         return 'slug';
     }
 
-    public function Restaurant()
+    public function restaurant()
     {
         return $this->belongsTo(Restaurant::class);
     }

@@ -18,21 +18,23 @@
         </div>
     </div>
 </div>
+
+
 <div class="row">
 
     <section id="main-content" class="column column-offset-20">
         <div class="row grid-responsive">
             <div class="column page-heading">
                 <div class="large-card">
-                    <h1 class="mx-4">Hey there!</h1>
+                    <h1 class="mx-4">Hey {{ Auth::user()->name }}!</h1>
                     <div class="d-flex align-items-center">
-                        <div class="button-container  mx-4 p-2">
+                        <div class="mx-4 p-2" style="background-color: #14D0C1;">
 
                             <a href="{{route('admin.create')}}">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 448 512">
                                     <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
                                 </svg>
+
                             </a>
 
 
@@ -50,7 +52,7 @@
         <div class="row grid-responsive">
             <div class="column column-50">
                 <div class="card">
-                    <div class="card-title">
+                    <div class="card-title" style="background-color:#14D0C1">
                         <h2>Statystics</h2>
                     </div>
                     <div class="card-block">
@@ -68,7 +70,7 @@
         <div class="row grid-responsive">
             <div class="column ">
                 <div class="card">
-                    <div class="card-title">
+                    <div class="card-title" style="background-color:#14D0C1">
                         <h3>Staff</h3>
                     </div>
                     <div class="card-block">

@@ -15,7 +15,7 @@ class Restaurant extends Model
     protected $table = 'restaurants';
     protected $fillable = ['name', 'image', 'address', 'opening_time', 'P_IVA', 'category'];
 
-    public function Plate()
+    public function plates()
     {
         return $this->hasMany(Plate::class);
     }
@@ -34,5 +34,9 @@ class Restaurant extends Model
     {
         return $this->hasMany(Order::class);
     }
-    
+
+    public function createPlate($data)
+    {
+        return $this->plates()->create($data);
+    }
 }

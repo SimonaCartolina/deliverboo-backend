@@ -10,6 +10,9 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
+use App\Http\Controllers\Auth;
+use App\Models\User;
+
 
 
 class PlateController extends Controller
@@ -20,9 +23,9 @@ class PlateController extends Controller
     public function index()
     {
         //
-        $platesList = Plate::all();
-
-        return view('admin.menu.menu', compact('platesList'));
+        $restaurant = auth()->user()->restaurant;
+        $plates = $restaurant->plates;
+        return view('admin.menu.menu', compact('plates'));
     }
 
     /**
@@ -30,10 +33,7 @@ class PlateController extends Controller
      */
     public function create()
     {
-        //
-        $platesList = Plate::all();
-
-        return view('admin.menu.create', compact('platesList'));
+        return view('admin.menu.create');
     }
 
     /**
@@ -55,11 +55,10 @@ class PlateController extends Controller
             $data['image'] = $img_path;
         }
 
+        $restaurant = Auth()->user()->restaurant;
 
-        $newPlate = new Plate();
-        $newPlate->fill($data);
-        $newPlate->save();
-        return redirect()->route('admin.menu.menu')->with('created', $newPlate->id);
+        $restaurant->createPlate($data);
+        return redirect()->route('admin.menu.menu')->with('created', 'Piatto creato con successo');
     }
 
     /**

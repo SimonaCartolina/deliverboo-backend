@@ -40,8 +40,7 @@ class RestaurantController extends Controller
         if ($existingRestaurant) {
             return redirect()->route('admin.edit', $existingRestaurant);
         }
-         return view('admin.create');
-
+        return view('admin.create');
     }
 
     /**
@@ -72,9 +71,13 @@ class RestaurantController extends Controller
      */
     public function show()
     {
-        $platesList = Plate::all();
 
-        return view('admin.menu.menu', compact('platesList'));
+        $restaurant = auth()->user()->restaurant;
+        $plates = $restaurant->plates();
+        return view('admin.menu.menu', compact('plates'));
+        // $platesList = Plate::all();
+
+        // return view('admin.menu.menu', compact('platesList'));
     }
 
     /**
@@ -119,4 +122,3 @@ class RestaurantController extends Controller
         //
     }
 }
-

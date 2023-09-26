@@ -12,7 +12,12 @@
         <div>
             <h1>Menù:</h1>
             <button class="button-container mt-2 p-2">
-                <a href="{{ route('admin.menu.create')}}">Create new plate</a>
+                <a href="{{ route('admin.menu.create')}}">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 448 512">
+                        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                    </svg>
+                </a>
             </button>
         </div>
     </div>
@@ -20,7 +25,8 @@
 
 
 
-    @foreach ($platesList as $plate)
+    @if (empty($plates) > 0)
+    @foreach($plates as $plate)
     <div class="card my-4 mx-4" style="width:22rem;">
         <ul>
             @if (str_starts_with($plate->image, 'http'))
@@ -32,7 +38,6 @@
                 <h2>{{ $plate->name }}</h2>
                 <p>{{ $plate->description }}</p>
                 <p>Prezzo: {{ $plate->price }} €</p>
-                <p>{{ $plate->id_restaurant }}</p>
             </li>
             <li>
                 <a class="btn btn-sm btn-success" style="width:3rem;" href="{{ route('admin.menu.edit', $plate->slug) }}">
@@ -47,6 +52,14 @@
 
     </div>
     @endforeach
+
+    @else
+    <div class="my-4">
+        <p>Nessun piatto nel menu.</p>
+
+    </div>
+
+    @endif
 
 </div>
 @endsection
