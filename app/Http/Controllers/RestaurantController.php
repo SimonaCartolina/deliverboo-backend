@@ -36,7 +36,12 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        $existingRestaurant = Auth()->user()->restaurant;
+        if ($existingRestaurant) {
+            return redirect()->route('admin.edit', $existingRestaurant);
+        }
+         return view('admin.create');
+
     }
 
     /**
@@ -57,10 +62,9 @@ class RestaurantController extends Controller
             $data['image'] = $img_path;
         }
 
-        $newRestaurant = new Restaurant();
-        $newRestaurant->fill($data);
-        $newRestaurant->save();
-        return redirect()->route('admin.home')->with('created', $newRestaurant->id);
+        $newRestaurant = new Restaurant($data);
+        Auth()->user()->restaurant()->save($newRestaurant);
+        return redirect()->route('admin.home', $newRestaurant)->with('created', "ristorante creato");
     }
 
     /**
