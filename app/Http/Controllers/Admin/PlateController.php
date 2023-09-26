@@ -57,7 +57,7 @@ class PlateController extends Controller
 
         $restaurant = Auth()->user()->restaurant;
 
-        $restaurant->createPlate($data);
+        $restaurant->createPlate($data)->save();
 
         return redirect()->route('admin.menu.menu')->with('created', 'Piatto creato con successo');
     }
