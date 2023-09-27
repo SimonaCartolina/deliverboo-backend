@@ -34,7 +34,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('plates', function (Blueprint $table) {
-            $table->dropForeign(['id_restaurant']);
+            $table->dropForeign(['restaurant_id']);
         });
         Schema::dropIfExists('plates');
     }
