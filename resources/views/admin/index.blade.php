@@ -50,6 +50,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item fw-bold" style="color:#618B35">{{ $restaurant->opening_time  }}</li>
                     <li class="list-group-item fw-bold" style="color:#618B35">{{ $restaurant->P_IVA  }}</li>
+                    <li class="list-group-item fw-bold" style="color:#618B35">{{ $restaurant->category }}</li>
                 </ul>
                 <div>
 
