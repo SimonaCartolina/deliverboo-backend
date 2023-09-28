@@ -75,7 +75,7 @@ class RestaurantController extends Controller
 
         $restaurant = auth()->user()->restaurant;
         $plates = $restaurant->plates;
-        return view('admin.menu.menu', compact('plates'));
+        return view('admin.menu.menu', compact('plates','restaurant'));
         // $platesList = Plate::all();
 
         // return view('admin.menu.menu', compact('platesList'));
