@@ -17,7 +17,7 @@ class ApiController extends Controller
         // return response()->json($restaurants);
 
         if ($request->has('search')) {
-            $restaurants = Restaurant::where('name', 'LIKE', '%' . $request->search . '%')->get();
+            $restaurants = Restaurant::where('category', 'LIKE', '%' . $request->search . '%')->get();
         } else {
             $restaurants = Restaurant::all();
         }
