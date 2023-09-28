@@ -47,6 +47,13 @@
                 </label>
                 <input type="text" class="form-control" id="price" name="price">
             </div>
+            <div class="mb-3">
+                <label for="visible">Visible:</label>
+                <select class="form-select" aria-label="Default select example" name="visible" id="visible">
+                    <option selected value="1">Fai vedere il tuo piatto a tutti</option>
+                    <option value="0">Non mostrare questo piatto</option>
+                </select>
+            </div>
 
             <button type="submit" class="btn btn-success">
                 Create
