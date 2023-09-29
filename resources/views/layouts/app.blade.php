@@ -58,25 +58,25 @@
 
                             <li>
 
-                                <a href="{{route('admin.home')}}" class="nav-link" role="button"> Home </a>
+                                <a href="{{route('admin.home')}}" class="nav-link fw-bold" role="button"> Home </a>
                             </li>
 
                             <li>
-                                <a href="{{route('admin.index')}}" class="nav-link" role="button">Profile </a>
+                                <a href="{{route('admin.index')}}" class="nav-link fw-bold" role="button">Profile </a>
 
                             </li>
 
                             <li>
-                                <a href="" class="nav-link me-3" role="button"> Orders </a>
+                                <a href="" class="nav-link me-3 fw-bold" role="button"> Orders </a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    <a class="dropdown-item fw-bold" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>

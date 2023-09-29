@@ -37,7 +37,7 @@ section.background{
     background-image: url('../../public/storage/uploads/cibo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
 
 }
 
@@ -49,3 +49,20 @@ div.card{
 nav.navbar{
     background-color: #E7A85C;
 }
+
+div.dropdown-menu{
+    background-color: #E7A85C;
+}
+
+div.column{
+    margin-right: 15rem;
+}
+
+table.table{
+    background-color: #E7A85C;
+}
+
+div.large-card{
+    background-color: #E7A85C;
+}
+

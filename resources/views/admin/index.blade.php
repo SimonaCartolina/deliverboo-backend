@@ -8,10 +8,13 @@
 @endsection
 
 @section('content')
+<div>
+    
+</div>
 <div class="container py-3">
     <div class="row">
-        <div class="col-12">
-            <h1 class="m-3 my-5 fw-bolder">
+        <div class="col-4">
+            <h1 class="m-3 my-5 fw-bolder text-center" style="background-color: #E7A85C;">
                 MY RESTAURANT:
             </h1>
         </div>
@@ -73,7 +76,7 @@
 
 
             @else
-            <p>Nessun ristorante creato.</p>
+            <p class="fw-bold fs-3" style="background-color: #E7A85C;">Nessun ristorante creato.</p>
             @endif
         </div>
     </div>

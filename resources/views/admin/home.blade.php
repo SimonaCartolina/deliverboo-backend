@@ -25,7 +25,7 @@
                 <div class="column page-heading">
                     <div class="large-card d-flex justify-content-between align-items-center">
                         <div class="d-inline-block">
-                            <h1 class="mx-4">Hey {{ Auth::user()->name }}!</h1>
+                            <h1 class="mx-4">Hey <span class="fw-bold">{{ Auth::user()->name }}!</span></h1>
                         </div>
                         <div class="d-inline-block align-items-center">
 
@@ -40,8 +40,8 @@
                                 </a>
                             </div>
                             @else
-                            <div class="mx-4 p-2" style="background-color: #14D0C1;">
-                                <span>Crea il tuo Ristorante</span>
+                            <div class="mx-4 p-2 border border-black" style="background-color: orange;">
+                                <span class="fw-bold">Crea il tuo Ristorante</span>
                                 <a href="{{route('admin.create')}}">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 448 512">
                                         <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
@@ -55,78 +55,80 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row grid-responsive">
-                <div class="column column-50">
-                    <div class="card">
-                        <div class="card-title" style="background-color:#14D0C1">
-                            <h2>Statistiche</h2>
+            <div class="d-flex">
+                <div class="row">
+                    <div class="column column-50">
+                        <div class="card border border-black">
+                            <div class="card-title border-bottom border-black" style="background-color: #E7A85C">
+                                <h2 class="fw-bold">Statistiche</h2>
+                            </div>
+                            <div class="card-block">
+                                <div class="">
+                                    <img src="https://img.freepik.com/free-vector/construction-with-black-yellow-stripes_1017-30755.jpg?w=1800&t=st=1695915259~exp=1695915859~hmac=e581075be22da46a5d566339a0e8bf32764f28a7e87ec4de7c125e6ecc4a8aff" alt="" style="width: 100%; height: 12rem;">
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-block">
-                            <div class="">
-                                <img src="https://img.freepik.com/free-vector/construction-with-black-yellow-stripes_1017-30755.jpg?w=1800&t=st=1695915259~exp=1695915859~hmac=e581075be22da46a5d566339a0e8bf32764f28a7e87ec4de7c125e6ecc4a8aff" alt="" style="width: 100%; height: 12rem;">
+                    </div>
+                </div>
+
+
+
+
+                <div class="row grid-responsive">
+                    <div class="column">
+                        <div class="card border border-black">
+                            <div class="card-title border-bottom border-black" style="background-color: #E7A85C">
+                                <h3 class="fw-bold">Membri del Team</h3>
+                            </div>
+                            <div class="card-block">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="border border-black fw-bold" style="background-color: #E7A85C">Nome</th>
+                                            <th class="border border-black" style="background-color: #E7A85C">Ruolo</th>
+                                            <th class="border border-black" style="background-color: #E7A85C">Età</th>
+                                            <th class="border border-black" style="background-color: #E7A85C">Provenienza</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border border-black fw-bold" style="background-color: #E7A85C">Simona Cartolina</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Si concentra Meglio da sola</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Da non chiedere</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Ovungue passi qualcuno con uno scarico modificato</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-black fw-bold" style="background-color: #E7A85C">Cosimo Collucci</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">FullStack Web Developer</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">27</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Torre, 72028</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-black fw-bold" style="background-color: #E7A85C">Francesco Bifero</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Scappato di casa</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">All'anagrafe 26</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Non ha un domicilio</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-black fw-bold" style="background-color: #E7A85C">Luca Mazzoli</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Si ci sono</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Non ho ancora chiesto</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Non pervenuta</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-black fw-bold" style="background-color: #E7A85C">Alessio di Nardo</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Porta a spasso i cani</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">27</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">Ovunque si trovano i suoi cuccioli</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-            <div class="row grid-responsive">
-                <div class="column ">
-                    <div class="card">
-                        <div class="card-title" style="background-color:#14D0C1">
-                            <h3>Membri del Team</h3>
-                        </div>
-                        <div class="card-block">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>Ruolo</th>
-                                        <th>Età</th>
-                                        <th>Provenienza</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Simona Cartolina</td>
-                                        <td>Si concentra Meglio da sola</td>
-                                        <td>Da non chiedere</td>
-                                        <td>Ovungue passi qualcuno con uno scarico modificato</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cosimo Collucci</td>
-                                        <td>FullStack Web Developer</td>
-                                        <td>27</td>
-                                        <td>Torre, 72028</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Francesco Bifero</td>
-                                        <td>Scappato di casa</td>
-                                        <td>All'anagrafe 26</td>
-                                        <td>Non ha un domicilio</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Luca Mazzoli</td>
-                                        <td>Si ci sono</td>
-                                        <td>Non ho ancora chiesto</td>
-                                        <td>Non pervenuta</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Alessio di Nardo</td>
-                                        <td>Porta a spasso i cani</td>
-                                        <td>27</td>
-                                        <td>Ovunque si trovano i suoi cuccioli</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                
 
 
     </div>
