@@ -24,7 +24,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-md shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('http://localhost:5174/') }}">
+                    <a class="navbar-brand fs-3" href="{{ url('http://localhost:5174/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -42,13 +42,13 @@
                             <!-- Authentication Links -->
                             @guest
                             @if (Route::has('login'))
-                            <li class="nav-item">
+                            <li class="nav-item fw-bold fs-5">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @endif
 
                             @if (Route::has('register'))
-                            <li class="nav-item">
+                            <li class="nav-item fw-bold fs-5">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                             @endif
