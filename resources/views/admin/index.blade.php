@@ -46,14 +46,14 @@
 
             </div>
             <div class="container-profile col-4">
-                <h5 class="card-title fw-bolder" style="color: #262c2cf7">{{ $restaurant->name  }}</h5>
+                <h5 class="card-title fw-bolder fs-1" style="color: black">{{ $restaurant->name  }}</h5>
 
-                <p class="card-text fw-bold mt-3" style="color:#618B35"> {{ $restaurant->address  }}</p>
+                <p class="card-text fw-bold mt-3 fs-3" style="color:black"> {{ $restaurant->address  }}</p>
 
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item fw-bold" style="color:#618B35">{{ $restaurant->opening_time  }}</li>
-                    <li class="list-group-item fw-bold" style="color:#618B35">{{ $restaurant->P_IVA  }}</li>
-                    <li class="list-group-item fw-bold" style="color:#618B35">{{ $restaurant->category }}</li>
+                    <li class="list-group-item fw-bold" style="color:#E7A85C">{{ $restaurant->opening_time  }}</li>
+                    <li class="list-group-item fw-bold" style="color:#E7A85C">{{ $restaurant->P_IVA  }}</li>
+                    <li class="list-group-item fw-bold" style="color:#E7A85C">{{ $restaurant->category }}</li>
                 </ul>
                 <div>
 
