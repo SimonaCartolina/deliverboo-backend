@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row justify-content-around">
         <div class="col-8 my-5">
-            <h1 style="color:black" class="fw-bolder ">
+            <h1 style="color:#FFC107" class="fw-bolder ">
                 {{ $restaurant->name }}
             </h1>
         </div>
