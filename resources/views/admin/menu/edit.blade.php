@@ -8,11 +8,11 @@
 <div class="container">
     <div class="row justify-content-around">
         <div class="col-8 my-5">
-            <h1 style="color:white" class="fw-bolder">
-                Modify {{ $plate->slug }}
+            <h1 style="color:#FFC107" class="fw-bolder">
+                {{ $plate->name }}
             </h1>
         </div>
-        <form class="col-8 bg-light p-3 rounded bg-white" action="{{ route('admin.menu.update', $plate->slug) }}" method="POST">
+        <form class="col-8 bg-light p-3 rounded bg-white" action="{{ route('admin.menu.update', $plate->slug) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -21,7 +21,7 @@
                 <label for="image" placeholder="Upload image">
                     upload an image
                 </label>
-                <input type="file" name="image" id="image" class="image" placeholder="upload image">
+                <input type="file" name="image" id="image" class="image" placeholder="upload image"">
 
             </div>
 
@@ -29,20 +29,20 @@
                 <label for="name" class="form-label">
                     Name:
                 </label>
-                <input type="text" class="form-control" id="name" name="name" value='{{ $plate->name }}'>
+                <input type="text" class="form-control" id="name" name="name" value='{{ $plate->name }}' style="background-color:  #E7A85C;">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">
                     Description:
                 </label>
-                <input type="text" class="form-control" id="description" name="description" value='{{ $plate->description }}'>
+                <input type="text-area" class="form-control" id="description" name="description" value='{{ $plate->description }}' style="background-color:  #E7A85C;">
             </div>
 
             <div class="mb-3">
                 <label for="price" class="form-label">
                     Price:
                 </label>
-                <input type="text" class="form-control" id="price" name="price" value='{{ $plate->price }}'>
+                <input type="text" class="form-control" id="price" name="price" value='{{ $plate->price }}' style="background-color:  #E7A85C;">
             </div>
 
 
@@ -52,7 +52,8 @@
                     <label for="description" class="form-label">
                         Description
                     </label>
-                    <input type="text" class="form-control" id="description" name="description" value='{{ $plate->description }}'>
+                    <textarea name="description" id="description" class="form-control" cols="100" rows="5"  value='{{ $plate->description }}'  style="background-color:  #E7A85C;">{{ $plate->description }}
+                    </textarea>
                 </div>
             </div>
 
