@@ -103,6 +103,7 @@ class RestaurantController extends Controller
             'address' => ['string', 'max:100'],
             'opening_time' => ['required'],
             'P_IVA' => ['min:9', 'max:9'],
+            'category'=>['required'],
         ]);
 
         if ($request->hasFile('image')) {

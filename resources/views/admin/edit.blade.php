@@ -53,6 +53,22 @@
                 </label>
                 <input type="text" class="form-control" id="P_IVA" name="P_IVA" value='{{ $restaurant->P_IVA }}'>
             </div>
+            <div class="mb-3">
+                <label for="category">Categoria:</label>
+                <select class="form-select" aria-label="Default select example" name="category" id="category" >
+                    <option selected="{{ old('$restaurant->category') }}">{{ $restaurant->category }}</option>
+                    <option value="Cinese">Cinese</option>
+                    <option value="Giapponese">Giapponese</option>
+                    <option value="Fast Food">Fast Food</option>
+                    <option value="Italiano">Italiano</option>
+                    <option value="Vegetariano">Vegetariano</option>
+                    <option value="Pizzeria">Pizzeria</option>
+                    <option value="Messicano">Messicano</option>
+                    <option value="Caffetteria">Caffetteria</option>
+                    <option value="Greco">Greco</option>
+
+                </select>
+            </div>
 
 
 
