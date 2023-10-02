@@ -10,7 +10,7 @@
     <div class="row justify-content-around">
         <div class="col-8 my-5">
             <h1 style="color:black" class="fw-bolder ">
-                Modify {{ $restaurant->id }}
+                {{ $restaurant->name }}
             </h1>
         </div>
         <form class="col-8 p-3 rounded bg-warning" action="{{ route('admin.update', $restaurant->id) }}" method="POST" enctype="multipart/form-data">
@@ -55,7 +55,7 @@
             </div>
             <div class="mb-3">
                 <label for="category">Categoria:</label>
-                <select class="form-select" aria-label="Default select example" name="category" id="category" >
+                <select class="form-select" aria-label="Default select example" name="category" id="category" style="background-color: #E7A85C;" >
                     <option selected="{{ old('$restaurant->category') }}">{{ $restaurant->category }}</option>
                     <option value="Cinese">Cinese</option>
                     <option value="Giapponese">Giapponese</option>
