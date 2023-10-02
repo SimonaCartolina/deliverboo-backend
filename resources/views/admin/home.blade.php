@@ -76,7 +76,7 @@
 
                 <div class="row grid-responsive">
                     <div class="column">
-                        <div class="card border border-black">
+                        <div class="card border border-black" style="margin-left: 4rem;">
                             <div class="card-title border-bottom border-black" style="background-color: #E7A85C">
                                 <h3 class="fw-bold">Membri del Team</h3>
                             </div>
