@@ -10,7 +10,7 @@
 <div class="container d-flex flex-wrap">
     <div class="col-12 ps-4">
         <div>
-            <h1 class="fw-bolder ">Menù:</h1>
+            <h1 class="fw-bolder" style="color:#e7a85c">Menù:</h1>
             <button class="button-container btn btn-warning mt-2 p-2">
                 <a href="{{ route('admin.menu.create')}}">
 
