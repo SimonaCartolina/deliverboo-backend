@@ -14,7 +14,7 @@
 <div class="container py-3">
     <div class="row">
         <div class="col-4">
-            <h1 class="m-3 my-5 fw-bolder text-center" style="background-color: #E7A85C;">
+            <h1 class="m-3 my-5 fw-bolder text-center">
                 MY RESTAURANT:
             </h1>
         </div>
@@ -50,7 +50,7 @@
 
                 <p class="card-text fw-bold mt-3 fs-3" style="color:black"> {{ $restaurant->address  }}</p>
 
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-item-warning">
                     <li class="list-group-item fw-bold" style="color:#E7A85C">{{ $restaurant->opening_time  }}</li>
                     <li class="list-group-item fw-bold" style="color:#E7A85C">{{ $restaurant->P_IVA  }}</li>
                     <li class="list-group-item fw-bold" style="color:#E7A85C">{{ $restaurant->category }}</li>
