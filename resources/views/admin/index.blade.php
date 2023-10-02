@@ -8,10 +8,13 @@
 @endsection
 
 @section('content')
+<div>
+    
+</div>
 <div class="container py-3">
     <div class="row">
-        <div class="col-12">
-            <h1 class="m-3 my-5 fw-bolder">
+        <div class="col-4">
+            <h1 class="m-3 my-5 fw-bolder text-center" style="background-color: #E7A85C;">
                 MY RESTAURANT:
             </h1>
         </div>
@@ -43,14 +46,14 @@
 
             </div>
             <div class="container-profile col-4">
-                <h5 class="card-title fw-bolder" style="color: #262c2cf7">{{ $restaurant->name  }}</h5>
+                <h5 class="card-title fw-bolder fs-1" style="color: black">{{ $restaurant->name  }}</h5>
 
-                <p class="card-text fw-bold mt-3" style="color:#618B35"> {{ $restaurant->address  }}</p>
+                <p class="card-text fw-bold mt-3 fs-3" style="color:black"> {{ $restaurant->address  }}</p>
 
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item fw-bold" style="color:#618B35">{{ $restaurant->opening_time  }}</li>
-                    <li class="list-group-item fw-bold" style="color:#618B35">{{ $restaurant->P_IVA  }}</li>
-                    <li class="list-group-item fw-bold" style="color:#618B35">{{ $restaurant->category }}</li>
+                    <li class="list-group-item fw-bold" style="color:#E7A85C">{{ $restaurant->opening_time  }}</li>
+                    <li class="list-group-item fw-bold" style="color:#E7A85C">{{ $restaurant->P_IVA  }}</li>
+                    <li class="list-group-item fw-bold" style="color:#E7A85C">{{ $restaurant->category }}</li>
                 </ul>
                 <div>
 
@@ -73,7 +76,7 @@
 
 
             @else
-            <p>Nessun ristorante creato.</p>
+            <p class="fw-bold fs-3" style="background-color: #E7A85C;">Nessun ristorante creato.</p>
             @endif
         </div>
     </div>

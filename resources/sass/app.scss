@@ -32,3 +32,37 @@ body {
         background-size: cover;
     }
 }
+
+section.background{
+    background-image: url('../../public/storage/uploads/cibo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 125vh;
+
+}
+
+div.card{
+    width: 450px;
+    background-color: #E7A85C;
+}
+
+nav.navbar{
+    background-color: #E7A85C;
+}
+
+div.dropdown-menu{
+    background-color: #E7A85C;
+}
+
+div.column{
+    margin-right: 15rem;
+}
+
+table.table{
+    background-color: #E7A85C;
+}
+
+div.large-card{
+    background-color: #E7A85C;
+}
+

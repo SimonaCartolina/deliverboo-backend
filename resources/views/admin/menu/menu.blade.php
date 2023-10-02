@@ -10,8 +10,8 @@
 <div class="container d-flex flex-wrap">
     <div class="col-12 ps-4">
         <div>
-            <h1>Menù:</h1>
-            <button class="button-container mt-2 p-2">
+            <h1 class="fw-bolder ">Menù:</h1>
+            <button class="button-container btn btn-warning mt-2 p-2">
                 <a href="{{ route('admin.menu.create')}}">
 
                     <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 448 512">
