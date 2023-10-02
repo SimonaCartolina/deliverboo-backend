@@ -57,16 +57,16 @@
 
                         <li>
 
-                            <a href="{{route('admin.home')}}" class="nav-link" role="button"> Home </a>
+                            <a href="{{route('admin.home')}}" class="nav-link" role="button">Home</a>
                         </li>
 
                         <li>
-                            <a href="{{route('admin.index')}}" class="nav-link" role="button">Profile </a>
+                            <a href="{{route('admin.index')}}" class="nav-link" role="button">Ristorante</a>
 
                         </li>
 
                         <li>
-                            <a href="" class="nav-link me-3" role="button"> Orders </a>
+                            <a href="" class="nav-link me-3" role="button"> Ordini </a>
                         </li>
 
                         <li class="nav-item dropdown">
