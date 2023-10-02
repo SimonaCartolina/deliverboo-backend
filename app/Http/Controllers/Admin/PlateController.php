@@ -73,11 +73,10 @@ class PlateController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $slug)
+    public function edit($id)
     {
-        $menuList = Plate::all();
-        $plate = Plate::findOrFail($slug);
-        return view('admin.menu.edit', compact('plate', 'menuList'));
+        $plate = Plate::find($id);
+        return view('admin.menu.edit', compact('plate'));
     }
 
     /**

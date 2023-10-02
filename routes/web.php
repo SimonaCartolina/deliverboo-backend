@@ -23,7 +23,7 @@ Auth::routes();
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
@@ -44,5 +44,5 @@ Route::get('admin/menu/menu', [RestaurantController::class, 'show'])->name('admi
 Route::get('admin/menu/create', [PlateController::class, 'create'])->name('admin.menu.create')->middleware('auth');
 Route::post('admin/menu/store', [PlateController::class, 'store'])->name('admin.menu.store')->middleware('auth');
 
-Route::get('admin/menu/{slug}/edit', [PlateController::class, 'edit'])->name('admin.menu.edit')->middleware('auth');
-Route::put('admin/menu/{slug}', [PlateController::class, 'update'])->name('admin.menu.update')->middleware('auth');
+Route::get('admin/menu/{id}/edit', [PlateController::class, 'edit'])->name('admin.menu.edit')->middleware('auth');
+Route::post('admin/menu/{id}', [PlateController::class, 'update'])->name('admin.menu.update')->middleware('auth');
