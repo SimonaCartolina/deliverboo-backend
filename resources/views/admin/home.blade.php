@@ -21,8 +21,8 @@
     <div class="row">
 
         <section id="main-content" class="col-12">
-            <div class="row grid-responsive">
-                <div class="column page-heading">
+            <div class="row d-flex">
+                <div class="col-12 page-heading">
                     <div class="large-card d-flex justify-content-between align-items-center">
                         <div class="d-inline-block">
                             <h1 class="mx-4">Hey <span class="fw-bold">{{ Auth::user()->name }}!</span></h1>
@@ -55,10 +55,10 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex">
-                <div class="row">
-                    <div class="column column-50">
-                        <div class="card border border-black">
+            <div class="container d-flex justify-content-around">
+                <div class="row col-12">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="card border border-black" style="width: auto;">
                             <div class="card-title border-bottom border-black" style="background-color: #E7A85C">
                                 <h2 class="fw-bold">Statistiche</h2>
                             </div>
@@ -69,14 +69,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-
-
-                <div class="row grid-responsive">
-                    <div class="column">
-                        <div class="card border border-black" style="margin-left: 4rem;">
+                
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="card border border-black" style="width: auto;">
                             <div class="card-title border-bottom border-black" style="background-color: #E7A85C">
                                 <h3 class="fw-bold">Membri del Team</h3>
                             </div>
@@ -110,9 +105,9 @@
                                             <td class="border border-black" style="background-color: #E7A85C">Non ha un domicilio</td>
                                         </tr>
                                         <tr>
-                                            <td class="border border-black fw-bold" style="background-color: #E7A85C">Luca Mazzoli</td>
+                                            <td class="border border-black fw-bold" style="background-color: #E7A85C">Luca Mazzola</td>
                                             <td class="border border-black" style="background-color: #E7A85C">Si ci sono</td>
-                                            <td class="border border-black" style="background-color: #E7A85C">Non ho ancora chiesto</td>
+                                            <td class="border border-black" style="background-color: #E7A85C">21</td>
                                             <td class="border border-black" style="background-color: #E7A85C">Non pervenuta</td>
                                         </tr>
                                         <tr>
