@@ -11,7 +11,6 @@
 
 a {
     text-decoration: none;
-    color: black;
     font-weight: bolder;
 }
 
@@ -33,36 +32,36 @@ body {
     }
 }
 
-section.background{
-    background-image: url('../../public/storage/uploads/cibo.png');
+section.background {
+
+    background-image: url('../../public/storage/uploads/deliveroo.jpg');
+    background-size: 500px;
+    background-position-x: 10rem;
+    background-position-y: 5rem;
+    background-color: #D3FDE6;
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 125vh;
 
 }
 
-div.card{
+nav.navbar {
+    background-color: #D3FDE6;
+}
+
+section #main-content {
+    position: relative;
+    left: 50%;
+    height: 100vh;
+
+}
+
+div.card {
     width: 450px;
-    background-color: #E7A85C;
+    background-color: #D3FDE6;
+
 }
 
-nav.navbar{
-    background-color: #E7A85C;
+.logo {
+    font-family: 'Agbalumo';
+    font-size: 1.8rem;
+    color: #DE9945
 }
-
-div.dropdown-menu{
-    background-color: #E7A85C;
-}
-
-div.column{
-    margin-right: 15rem;
-}
-
-table.table{
-    background-color: #E7A85C;
-}
-
-div.large-card{
-    background-color: #E7A85C;
-}
-
