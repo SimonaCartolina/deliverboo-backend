@@ -5,14 +5,11 @@
 @endsection
 
 @section('content')
-<div class="container main-content">
-    <div class="row justify-content-around">
-        <div class="col-5 my-5">
-            <h1 class="text-uppercase fw-bolder fw-1" style="background-color: #E7A85C">
-                Make your restaurant !!!!!</h1>
-        </div>
+<section style="height:90vh">
 
-        <form class="col-8 bg-light p-3" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+    <div class="row justify-content-around">
+
+        <form style="position: relative; left: 150%; width:550px" class="col-8 bg-light p-3" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
@@ -89,5 +86,6 @@
             </a>
         </form>
     </div>
-</div>
+
+</section>
 @endsection

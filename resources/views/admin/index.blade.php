@@ -10,7 +10,7 @@
 @section('content')
 <section style="height:90vh">
 
-    <div class="py-5 main-index" style="position:relative; left:120%;">
+    <div class="py-5 main-index" style="position:relative; left:150%; width:550px">
 
         @if( session('created'))
         <div class="col-4">
@@ -64,7 +64,7 @@
 
 
                 @else
-                <p class="fw-bold fs-3" style="background-color: #E7A85C;">Nessun ristorante creato.</p>
+                <p class="fw-bold fs-3" style="position:relative; left:100%;">No restaurant created yet.</p>
                 @endif
             </div>
         </div>

@@ -7,8 +7,8 @@
 @section('content')
 
 
-<div class="container d-flex flex-wrap">
-    <div class="col-12 ps-4">
+<div class="container d-flex flex-wrap" style="height:90vh">
+    <div class="col-12 ps-4" style="position:relative; left:100%;">
         <div>
             <h1 class="fw-bolder" style="color:#e7a85c">Menù:</h1>
             <button class="button-container btn btn-warning mt-2 p-2">
