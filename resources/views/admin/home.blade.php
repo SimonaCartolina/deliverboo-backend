@@ -7,9 +7,10 @@
 
 <section id="main-content" class="d-flex flex-column">
     <div class="row d-flex flex-column">
-        <div class="card d-flex flex-column py-4">
+        <div class="card d-flex flex-column py-4" id="special-card">
             <div>
-                <h1 class="mx-4">Hey <span class="fw-bold">{{ Auth::user()->name }}!</span></h1>
+                <h1 class="mx-4">Hey <span>{{ Auth::user()->name }}!</span></h1>
+                <p class="mx-4">This is the personal area of your restaurant. Here you will find the details on your restaurant, your dishes and your orders!</p>
             </div>
 
             <div>
@@ -40,8 +41,17 @@
         </div>
     </div>
 
+
     </div>
+
 </section>
+
+<div class="img-container">
+    <img src="{{asset('storage/' . 'uploads/deliverboochart.png')}}" alt="" srcset="">
+</div>
+
+</template>
+
 
 <script src="js/chart.min.js"></script>
 <script src="js/chart-data.js"></script>
@@ -86,6 +96,36 @@
         background-color: whitesmoke;
         border: 3px solid #e4c8a5;
         border-radius: 25px;
+    }
+
+    #special-card {
+        position: relative;
+        left: 10%;
+    }
+
+    h1 {
+        color: #DE9945;
+        font-family: 'Agbalumo';
+    }
+
+    #special-card p {
+        line-height: 2rem;
+        margin-right: 5rem;
+    }
+
+    .img-container {
+        width: 100vw;
+        height: 100vh;
+
+    }
+
+    .img-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    section.background {
+        height: 90vh;
     }
 </style>
 @endsection

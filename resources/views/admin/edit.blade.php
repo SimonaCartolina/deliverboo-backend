@@ -6,14 +6,9 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-around">
-        <div class="col-8 my-5">
-            <h1 style="color:#FFC107" class="fw-bolder ">
-                {{ $restaurant->name }}
-            </h1>
-        </div>
-        <form class="col-8 p-3 rounded bg-warning" action="{{ route('admin.update', $restaurant->id) }}" method="POST" enctype="multipart/form-data">
+<div class="container" style="height:90vh;">
+    <div class="row card shadow-sm px-5 py-3" style="width:600px;">
+        <form class="col-12 p-3 rounded" action="{{ route('admin.update', $restaurant->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -30,32 +25,32 @@
                 <label for="name" class="form-label">
                     Name:
                 </label>
-                <input type="text" class="form-control" id="name" name="name" value='{{ $restaurant->name }}' style="background-color:  #E7A85C;">
+                <input type="text" class="form-control" id="name" name="name" value='{{ $restaurant->name }}'>
             </div>
 
             <div class="mb-3">
                 <label for="opening_time" class="form-label">
                     Opening time:
                 </label>
-                <input type="text" class="form-control" id="opening_time" name="opening_time" value='{{ $restaurant->opening_time }}' style="background-color:  #E7A85C;">
+                <input type="text" class="form-control" id="opening_time" name="opening_time" value='{{ $restaurant->opening_time }}'>
             </div>
 
             <div class="mb-3">
                 <label for="address" class="form-label">
                     Address:
                 </label>
-                <input type="text" class="form-control" id="address" name="address" value='{{ $restaurant->address }}' style="background-color:  #E7A85C;">
+                <input type="text" class="form-control" id="address" name="address" value='{{ $restaurant->address }}'>
             </div>
 
             <div class="mb-3">
                 <label for="P_IVA" class="form-label">
                     P iva:
                 </label>
-                <input type="text" class="form-control" id="P_IVA" name="P_IVA" value='{{ $restaurant->P_IVA }}' style="background-color:  #E7A85C;">
+                <input type="text" class="form-control" id="P_IVA" name="P_IVA" value='{{ $restaurant->P_IVA }}'>
             </div>
             <div class="mb-3">
                 <label for="category">Categoria:</label>
-                <select class="form-select" aria-label="Default select example" name="category" id="category" style="background-color: #E7A85C;" >
+                <select class="form-select" aria-label="Default select example" name="category" id="category">
                     <option selected="{{ old('$restaurant->category') }}">{{ $restaurant->category }}</option>
                     <option value="Cinese">Cinese</option>
                     <option value="Giapponese">Giapponese</option>

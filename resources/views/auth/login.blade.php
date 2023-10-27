@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="height:90vh;">
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card border border-black">
@@ -83,7 +83,8 @@
     }
 
     .pw {
-        color: whitesmoke;
+        color: #d7923d;
+        font-size: 0.90rem;
     }
 </style>
 

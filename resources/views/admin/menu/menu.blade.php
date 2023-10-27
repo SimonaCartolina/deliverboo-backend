@@ -27,7 +27,7 @@
 
     @if ($plates->count() > 0)
     @foreach($plates as $plate)
-    <div class="card my-4 mx-4" style="width:22rem;">
+    <div class="special-card my-4 mx-4" style="width:22rem;">
         <ul>
             @if (str_starts_with($plate->image, 'http'))
             <img src="{{ $plate->image }}" alt="{{ $plate->name }}">

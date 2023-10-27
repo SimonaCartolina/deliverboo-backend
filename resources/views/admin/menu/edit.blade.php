@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container main-content">
     <div class="row justify-content-around">
         <div class="col-8 my-5">
             <h1 style="color:#FFC107" class="fw-bolder">
@@ -25,7 +25,7 @@
 
             </div>
 
-            <div class="mb-3">
+            <div class=" mb-3">
                 <label for="name" class="form-label">
                     Name:
                 </label>
@@ -52,7 +52,7 @@
                     <label for="description" class="form-label">
                         Description
                     </label>
-                    <textarea name="description" id="description" class="form-control" cols="100" rows="5"  value='{{ $plate->description }}'  style="background-color:  #E7A85C;">{{ $plate->description }}
+                    <textarea name="description" id="description" class="form-control" cols="100" rows="5" value='{{ $plate->description }}' style="background-color:  #E7A85C;">{{ $plate->description }}
                     </textarea>
                 </div>
             </div>

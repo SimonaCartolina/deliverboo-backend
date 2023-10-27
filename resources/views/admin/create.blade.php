@@ -5,11 +5,11 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container main-content">
     <div class="row justify-content-around">
         <div class="col-5 my-5">
             <h1 class="text-uppercase fw-bolder fw-1" style="background-color: #E7A85C">
-                Make your restaurant   !!!!!</h1>
+                Make your restaurant !!!!!</h1>
         </div>
 
         <form class="col-8 bg-light p-3" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">

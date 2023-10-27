@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container main-content">
     <div class="row justify-content-around">
         <div class="col-8 my-5">
             <h1 class="fw-bolder" style="color:#FFC107">
@@ -18,8 +18,8 @@
             @error('image')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-            <div class="mb-3" >
-                <label for="image" class="form-label" >
+            <div class="mb-3">
+                <label for="image" class="form-label">
                     Image
                 </label>
                 {{-- <input type="text" class="form-control"  id="image" name="image"> --}}

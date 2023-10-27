@@ -8,16 +8,10 @@
 @endsection
 
 @section('content')
-<div class="container py-3">
-    <!-- <div class="row">
-        <div class="col-4">
-            <h1 class="m-3 my-5 fw-bolder text-center">
-                MY RESTAURANT: {{ $restaurant->name }}
-            </h1>
-        </div>
-    </div> -->
+<section style="height:90vh">
 
-    <div class="">
+    <div class="py-5 main-index" style="position:relative; left:120%;">
+
         @if( session('created'))
         <div class="col-4">
             <div class="alert alert-success">
@@ -26,10 +20,7 @@
         </div>
         @endif
 
-
-
-
-        <div class="container px-3 py-3 col-12 mt-lg-5 d-flex flex-sm-column flex-lg-row">
+        <div class="d-flex flex-sm-column flex-lg-row">
 
             <div class="card-body row">
                 @if ($restaurant)
@@ -41,7 +32,7 @@
                     @endif
 
                 </div>
-                <div class="col-lg-8 col-sm-12 p-2">
+                <div class="col-lg-8 col-sm-6 p-2">
                     <h5 class="card-title fw-bolder fs-1" style="color: #e7a85c">{{ $restaurant->name  }}</h5>
 
                     <p class="card-text fw-bold mt-3 fs-3" style="color:#e7a85c"> {{ $restaurant->address  }}</p>
@@ -77,9 +68,11 @@
                 @endif
             </div>
         </div>
+
     </div>
-</div>
-</div>
+</section>
+
+
 
 @endsection
 
@@ -102,4 +95,13 @@
         });
     });
 </script>
+
+<style>
+    .immagine-profile {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+    }
+</style>
+
 @endsection
