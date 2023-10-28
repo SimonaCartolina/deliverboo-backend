@@ -58,9 +58,7 @@
                             <li class="nav-item fw-bold fs-5">
                                 <a href="http://localhost:5174/">Home</a>
                             </li>
-                            <li class="nav-item fw-bold fs-5">
-                                <a href="http://localhost:5174/AboutUs">About Us</a>
-                            </li>
+
                             @if (Route::has('login'))
                             <li class="nav-item fw-bold fs-5">
                                 <a href="{{ route('login') }}">{{ __('Login') }}</a>
