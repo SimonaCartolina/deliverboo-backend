@@ -56,7 +56,7 @@
                             @guest
 
                             <li class="nav-item fw-bold fs-5">
-                                <a href="http://localhost:5175/">Home</a>
+                                <a href="http://localhost:5174/">Home</a>
                             </li>
                             <li class="nav-item fw-bold fs-5">
                                 <a href="http://localhost:5174/AboutUs">About Us</a>

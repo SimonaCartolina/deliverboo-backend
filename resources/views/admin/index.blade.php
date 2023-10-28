@@ -64,7 +64,7 @@
 
 
                 @else
-                <p class="fw-bold fs-3" style="position:relative; left:100%;">No restaurant created yet.</p>
+                <p class="fw-bold fs-3" style="position:relative; left:50%; font-family: 'Agbalumo';">No restaurant created yet.</p>
                 @endif
             </div>
         </div>
