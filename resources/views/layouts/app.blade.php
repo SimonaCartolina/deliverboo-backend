@@ -82,7 +82,7 @@
                             </li>
 
                             <li>
-                                <a href="{{route('admin.index')}}" class="nav-link" role="button">Ristorante</a>
+                                <a href="{{route('admin.index')}}" class="nav-link" role="button">Profile</a>
 
                             </li>
 
