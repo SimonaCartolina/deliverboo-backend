@@ -54,7 +54,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8">
-                                <button type="submit" class="btn" style="color:#d7923d; border:1px solid #d58b31">
+                                <button type="submit" class="btn" style="color:#00C2B2; border:1px solid #00C2B2">
                                     {{ __('Login') }}
                                 </button>
 
@@ -74,12 +74,8 @@
 
 <style scoped>
     .btn {
-        background-color: whitesmoke
-    }
-
-    .btn:hover,
-    .pw:hover {
-        background-color: #e4c8a5;
+        background-color: whitesmoke;
+        color: #00C2B2;
     }
 
     .pw {

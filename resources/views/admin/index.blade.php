@@ -33,7 +33,7 @@
 
                 </div>
                 <div class="col-lg-8 col-sm-6 p-2">
-                    <h5 class="card-title fw-bolder fs-1" style="color: #e7a85c">{{ $restaurant->name  }}</h5>
+                    <h5 class="card-title fw-bolder fs-1" style="color: #00C2B2">{{ $restaurant->name  }}</h5>
 
                     <p class="card-text fw-bold mt-3 fs-3" style="color:#e7a85c"> {{ $restaurant->address  }}</p>
 

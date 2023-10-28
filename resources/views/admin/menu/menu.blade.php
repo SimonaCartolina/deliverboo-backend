@@ -10,8 +10,8 @@
 <div class="container d-flex flex-wrap" style="height:90vh">
     <div class="col-12 ps-4" style="position:relative; left:100%;">
         <div>
-            <h1 class="fw-bolder" style="color:#e7a85c">Menù:</h1>
-            <button class="button-container btn btn-warning mt-2 p-2">
+            <h1 class="fw-bolder" style="color:#00BAAB">Menù:</h1>
+            <button class="button-container btn mt-2 p-2" style="background-color:#00BAAB">
                 <a href="{{ route('admin.menu.create')}}">
 
                     <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 448 512">

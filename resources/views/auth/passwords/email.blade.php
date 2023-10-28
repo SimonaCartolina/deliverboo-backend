@@ -49,9 +49,5 @@
     .btn {
         background-color: whitesmoke
     }
-
-    .btn:hover {
-        background-color: #e4c8a5;
-    }
 </style>
 @endsection

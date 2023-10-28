@@ -104,7 +104,7 @@
     }
 
     h1 {
-        color: #DE9945;
+        color: #00C2B2;
         font-family: 'Agbalumo';
     }
 

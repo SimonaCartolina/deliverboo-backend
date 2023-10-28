@@ -19,17 +19,11 @@ a {
 }
 
 section.background {
-    background-image: url('../../public/storage/uploads/deliveroo.jpg');
-    background-size: 550px;
-    background-position-x: 12rem;
-    background-position-y: 5rem;
-    background-color: #D3FDE6;
+    background-image: url('https://cdn.pixabay.com/photo/2020/03/25/21/05/pizza-4968645_640.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
-nav.navbar {
-    background-color: #D3FDE6;
-}
 
 section #main-content {
     position: relative;
@@ -48,7 +42,9 @@ div.main-content {
 
 div.card {
     width: 450px;
-    background-color: #D3FDE6;
+    color: white;
+    background-color: #111010df;
+    box-shadow: rgba(63, 63, 111, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     position: relative;
     left: 55%;
 }

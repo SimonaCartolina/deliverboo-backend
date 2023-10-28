@@ -8,7 +8,7 @@
 <div class="container main-content" style="height:90vh;">
     <div class="row justify-content-around" style="position:relative; left:30%; width:650px;">
         <div class="col-8 my-5">
-            <h1 class="fw-bolder" style="color:#FFC107">
+            <h1 class="fw-bolder" style="color:#00C2B2">
                 Make your plate!
             </h1>
         </div>
